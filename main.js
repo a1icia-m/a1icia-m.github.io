@@ -5,7 +5,7 @@
    - A WebGL shader uses those slopes to bend the water painting.
    Only the water is distorted; lily pads and ducks sit on top, untouched.
    ===================================================================== */
-(function pond() {
+(function pond() { try {
   const canvas = document.getElementById('water');
   const ducks = document.getElementById('ducks');
   const root = document.documentElement;
@@ -232,7 +232,10 @@
     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
-})();
+} catch (err) {
+  console.warn('Water effect unavailable, showing the still painting instead.', err);
+  const c = document.getElementById('water'); if (c) c.remove();
+} })();
 
 /* =====================================================================
    Nav: highlight the section you're currently in
@@ -259,25 +262,28 @@
   const title = document.getElementById('lb-title');
   const meta = document.getElementById('lb-meta');
   const closeBtn = document.getElementById('lb-close');
-  let opener = null;
+  if (!box || !img) return;
+  let opener = null, hideTimer = null;
 
   function open(fig) {
     const pic = fig.querySelector('img');
-    img.src = pic.src;
+    if (!pic) return;
+    clearTimeout(hideTimer);
+    img.src = pic.currentSrc || pic.src;
     img.alt = pic.alt;
-    title.textContent = fig.dataset.title || '';
-    meta.textContent = [fig.dataset.medium, fig.dataset.size].filter(Boolean).join(' · ');
+    if (title) title.textContent = fig.dataset.title || '';
+    if (meta) meta.textContent = [fig.dataset.medium, fig.dataset.size].filter(Boolean).join(' · ');
     opener = fig;
     box.hidden = false;
     document.body.style.overflow = 'hidden';
-    requestAnimationFrame(() => box.classList.add('open'));
-    closeBtn.focus();
+    requestAnimationFrame(() => requestAnimationFrame(() => box.classList.add('open')));
+    if (closeBtn) closeBtn.focus({ preventScroll: true });
   }
   function close() {
     box.classList.remove('open');
     document.body.style.overflow = '';
-    setTimeout(() => { box.hidden = true; }, 300);
-    if (opener) opener.focus();
+    hideTimer = setTimeout(() => { box.hidden = true; img.removeAttribute('src'); }, 300);
+    if (opener) opener.focus({ preventScroll: true });
   }
 
   document.querySelectorAll('figure.art-piece').forEach(fig => {
@@ -286,7 +292,7 @@
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(fig); }
     });
   });
-  closeBtn.addEventListener('click', close);
+  if (closeBtn) closeBtn.addEventListener('click', close);
   box.addEventListener('click', e => { if (e.target === box) close(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !box.hidden) close(); });
 })();

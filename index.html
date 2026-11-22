@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
 
@@ -36,14 +36,16 @@
     <!-- ============ HOME ============ -->
     <section id="home" class="home">
       <div class="home-inner">
-        <img class="me" src="assets/me.jpg" alt="Alicia Ma" />
+        <div class="me-wrap">
+          <div class="me-pad"><img class="me" src="assets/me.jpg" alt="Alicia Ma" /></div>
+        </div>
         <div class="card intro">
           <h1>Hi!</h1>
           <p>
-            My name is Alicia Ma and I'm a junior studying cs + ieor (industrial engineering &amp; operations research)
-            at uc Berkeley. scroll to learn more about my
-            <a href="#experience">experiences</a>, <a href="#projects">projects</a>, and more
-            <a href="#about">about me</a> and my interests!
+            I'm Alicia Ma, a junior at UC Berkeley studying CS + IEOR (Industrial Engineering &amp; Operations Research).
+            I love creating things, whether it's with code or a pencil, and I'm happiest finding creative solutions to
+            tricky problems. Scroll to see my <a href="#experience">experience</a>, <a href="#projects">projects</a>,
+            and more <a href="#about">about me</a>!
           </p>
         </div>
       </div>
@@ -135,19 +137,23 @@
 
       <div class="card about-intro">
         <p>
-          I'm a junior at UC Berkeley double majoring in computer science and industrial engineering &amp; operations research.
-          I grew up in Orange County, and these days I spend most of my time building things at the intersection of
-          distributed systems, search, and machine learning, from multi-region failover on AWS to RAG systems that help
-          people find what they're looking for.
+          I love creating things, whether that's with code or a pencil. To me, engineering a system and finishing a
+          painting aren't so different: both start with a messy idea, take a lot of patient iteration, and end with
+          something that works and feels right. That's what I look for in my work, from making cloud infrastructure
+          recover from failures on its own to building AI search tools that help people find exactly what they need.
         </p>
         <p>
-          Outside of coding, I'm usually drawing or painting (the pond you're looking at is hand-painted!), listening to
-          music, cafe hopping with friends, or out on a hike. I love anything creative, and I'm always looking for a new
-          cozy spot to sketch in.
+          I'm a junior at UC Berkeley double majoring in computer science and industrial engineering &amp; operations
+          research, which gives me both sides of that: the tools to build things and the analytical lens to make them
+          better. I'm originally from Orange County.
+        </p>
+        <p>
+          When I'm not coding, I'm usually drawing or painting (the pond you're looking at is hand-painted!), listening
+          to music, cafe hopping with friends, or out on a hike, always on the lookout for a cozy new spot to sketch.
         </p>
       </div>
 
-      <div class="grid two">
+      <div class="grid one">
         <div class="card">
           <h3 class="sub">things i love</h3>
           <ul class="hobbies">
@@ -156,15 +162,6 @@
             <li><span class="dot">♫</span>listening to music</li>
             <li><span class="dot">☕︎</span>cafe hopping</li>
             <li><span class="dot">⛰</span>hiking</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3 class="sub">fun facts</h3>
-          <ul class="facts">
-            <li>placed 1st in California and 3rd nationally in FBLA Financial Mathematics</li>
-            <li>founded a STEM nonprofit that grew to multiple chapters and hundreds of members</li>
-            <li>designed stickers for my own Etsy shop</li>
-            <li>heading to Singapore to study abroad at NUS in fall 2027</li>
           </ul>
         </div>
       </div>
@@ -225,28 +222,32 @@
       </div>
 
       <!-- ---------- RECENT EATS ---------- -->
-      <h3 class="section-sub">recent fav eats</h3>
+      <h3 class="section-sub">recent favorite eats</h3>
+      <p class="section-note">@chonkeymonkey on beli</p>
       <div class="grid eats">
         <article class="card eat">
-          <div class="thumb placeholder"><span>photo coming soon</span></div>
-          <h4>Place name</h4>
-          <p>What I ordered and why I loved it.</p>
+          <img class="thumb" src="assets/eats/friendsgiving.webp" alt="Friendsgiving spread with steak, mac and cheese, salad, asparagus and a charcuterie board" loading="lazy" />
+          <h4>friendsgiving</h4>
+          <p class="place">📍 berkeley</p>
+          <p>i brought the charcuterie!</p>
         </article>
         <article class="card eat">
-          <div class="thumb placeholder"><span>photo coming soon</span></div>
-          <h4>Place name</h4>
-          <p>What I ordered and why I loved it.</p>
+          <img class="thumb" src="assets/eats/butter-and-crumble.webp" alt="Boxes of pastries from Butter &amp; Crumble" loading="lazy" />
+          <h4>butter &amp; crumble</h4>
+          <p class="place">📍 san francisco</p>
+          <p>worth waking up at 6:30 am for</p>
         </article>
         <article class="card eat">
-          <div class="thumb placeholder"><span>photo coming soon</span></div>
-          <h4>Place name</h4>
-          <p>What I ordered and why I loved it.</p>
+          <img class="thumb" src="assets/eats/tartine.webp" alt="Banana cream tart, shakshuka, smoked salmon toast and bread pudding from Tartine" loading="lazy" />
+          <h4>tartine</h4>
+          <p class="place">📍 san francisco</p>
+          <p>banana cream tart and shakshuka are a must try</p>
         </article>
       </div>
     </section>
 
     <footer class="footer">
-      <p>made with love (and ducks) by alicia ma ⋆˙⟡ 2026</p>
+      <p>made with love by alicia ma ⋆˙⟡ 2026</p>
     </footer>
   </main>
 
@@ -262,6 +263,6 @@
     </figure>
   </div>
 
-  <script src="main.js"></script>
+  <script src="main.js?v=4"></script>
 </body>
 </html>
