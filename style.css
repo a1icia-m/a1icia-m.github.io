@@ -170,31 +170,50 @@ main { position: relative; z-index: 2; }
   gap: 36px;
 }
 .home-inner, .home-inner > * { max-width: 100%; }
-.home-inner { padding-right: 25%; } /* keeps text clear of the ducks on the right */
-.me-wrap {
-  flex-shrink: 0;
-  filter: drop-shadow(0 10px 22px rgba(16, 48, 38, 0.28));
-  animation: pad-float 6s ease-in-out infinite;
+.home-inner { padding-right: 18%; } /* keeps text clear of the ducks on the right */
+.me-col { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.me {
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid var(--leaf);
+  box-shadow: var(--shadow);
+}
+.socials { display: flex; gap: 12px; }
+.socials a {
+  display: grid; place-items: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--cream);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  color: var(--moss);
+  box-shadow: 0 4px 14px rgba(16, 48, 38, 0.2);
+  transition: transform .2s, background .2s, color .2s;
+}
+.socials a:hover { transform: translateY(-2px); background: var(--moss); color: var(--cream-solid); }
+.socials svg { width: 22px; height: 22px; }
+
+/* intro text sits on a painted-style lily pad */
+.intro.lilypad {
+  position: relative;
+  flex: 1;
+  max-width: 660px;
+  padding: 12% 13% 11%;
+  filter: drop-shadow(0 12px 24px rgba(16, 48, 38, 0.3));
+  animation: pad-float 7s ease-in-out infinite;
 }
 @keyframes pad-float {
-  0%, 100% { transform: rotate(-2deg) translateY(0); }
-  50% { transform: rotate(2deg) translateY(4px); }
+  0%, 100% { transform: rotate(-0.6deg) translateY(0); }
+  50% { transform: rotate(0.6deg) translateY(5px); }
 }
-.me-pad {
-  --lilypad: polygon(79.33% 90.37%, 75.92% 92.57%, 72.36% 94.52%, 68.66% 96.18%, 64.83% 97.53%, 60.91% 98.54%, 56.91% 99.19%, 52.88% 99.49%, 48.85% 99.43%, 44.85% 99.04%, 40.89% 98.36%, 37.00% 97.40%, 33.18% 96.20%, 29.44% 94.78%, 25.76% 93.13%, 22.18% 91.25%, 18.76% 89.04%, 15.69% 86.37%, 12.84% 83.46%, 10.24% 80.32%, 7.91% 76.99%, 5.85% 73.47%, 4.09% 69.80%, 2.63% 66.00%, 1.49% 62.10%, 0.66% 58.11%, 0.17% 54.07%, 0.32% 50.00%, 0.83% 45.99%, 1.57% 42.04%, 2.53% 38.16%, 3.68% 34.35%, 5.05% 30.61%, 6.64% 26.95%, 8.49% 23.39%, 10.62% 19.96%, 13.03% 16.72%, 15.74% 13.69%, 18.76% 10.96%, 22.04% 8.55%, 25.51% 6.41%, 29.13% 4.56%, 32.90% 3.02%, 36.78% 1.78%, 40.75% 0.86%, 44.77% 0.27%, 48.84% 0.01%, 52.91% 0.08%, 56.96% 0.49%, 60.96% 1.22%, 64.90% 2.27%, 68.73% 3.64%, 72.44% 5.32%, 76.00% 7.29%, 79.39% 9.55%, 82.42% 12.27%, 85.12% 15.29%, 87.57% 18.47%, 89.80% 21.78%, 91.84% 25.19%, 93.70% 28.69%, 95.39% 32.27%, 96.91% 35.96%, 98.22% 39.75%, 99.29% 43.66%, 99.95% 47.67%, 99.97% 51.74%, 99.66% 55.80%, 99.03% 59.83%, 98.06% 63.78%, 96.78% 67.65%, 95.19% 71.39%, 93.30% 75.00%, 62.63% 61.38%);
-  width: 250px;
-  height: 250px;
-  padding: 9px;
-  background: radial-gradient(circle at 35% 30%, #c6e6a8, #8cc49a 55%, #5f9e78);
-  clip-path: var(--lilypad);
-}
-.me {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  clip-path: var(--lilypad);
-}
-.intro { flex: 1; }
+.pad-shape { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.pad-body { fill: url(#padFill); stroke: #6aa87f; stroke-width: 2.5; vector-effect: non-scaling-stroke; }
+.pad-veins path { stroke: rgba(255, 255, 255, 0.28); stroke-width: 1.5; fill: none; vector-effect: non-scaling-stroke; }
+.pad-text { position: relative; }
+.intro.lilypad h1 { font-size: clamp(36px, 4vw, 48px); }
+.intro.lilypad p { font-size: 16.5px; line-height: 1.6; }
+.intro.lilypad a { text-decoration-color: var(--moss); }
+
 .intro h1 {
   font-family: var(--serif);
   font-weight: 500;
@@ -242,7 +261,17 @@ main { position: relative; z-index: 2; }
 /* ---------- projects ---------- */
 .project { padding: 0; overflow: hidden; display: flex; flex-direction: column; transition: transform .25s; }
 .project:hover { transform: translateY(-4px); }
-.project .thumb { aspect-ratio: 16 / 10; border: 0; border-bottom: 2px dashed rgba(47,107,85,.25); border-radius: 0; }
+.project .thumb { aspect-ratio: 16 / 9; }
+.art-thumb { display: grid; place-items: center; }
+.project .thumb.shot { width: 100%; object-fit: cover; object-position: center top; background: #000; }
+.art-thumb svg { width: 58%; fill: none; stroke: rgba(255,255,255,.9); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.art-thumb.avomix { background: linear-gradient(135deg, #7fbf8f, #3f8a6a); }
+.art-thumb.recipe { background: linear-gradient(135deg, #f0c27a, #d98a4a); }
+.art-thumb.droid  { background: linear-gradient(135deg, #8aa9d6, #4b5f9e); }
+.project-body { display: flex; flex-direction: column; flex: 1; }
+.project-links { display: flex; gap: 16px; margin-top: auto; padding-top: 16px; }
+.project-links a { font-weight: 600; font-size: 15px; color: var(--moss); text-decoration: none; border-bottom: 2px solid rgba(140,196,154,.7); }
+.project-links a:hover { border-color: var(--moss); }
 .project-body { padding: 20px 24px 24px; }
 .project h3 { margin: 0 0 6px; font-family: var(--serif); font-weight: 500; font-size: 23px; }
 .project p { margin: 0; color: var(--ink-soft); font-size: 16px; }
@@ -360,7 +389,9 @@ figure.art-piece:focus-visible { outline: 3px solid var(--beak); outline-offset:
 @media (max-width: 900px) {
   .home-inner { padding-right: 0; flex-direction: column; text-align: center; }
   .home { align-items: flex-end; padding-bottom: 90px; }
-  .me-pad { width: 190px; height: 190px; padding: 7px; }
+  .me { width: 170px; height: 170px; }
+  .intro.lilypad { padding: 30% 12% 26%; width: 100%; }
+  .intro.lilypad p { font-size: 15.5px; }
 }
 @media (max-width: 640px) {
   body { font-size: 16px; }
@@ -379,5 +410,5 @@ figure.art-piece:focus-visible { outline: 3px solid var(--beak); outline-offset:
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .ducks, .scroll-hint span, .me-wrap { animation: none; }
+  .ducks, .scroll-hint span, .intro.lilypad { animation: none; }
 }

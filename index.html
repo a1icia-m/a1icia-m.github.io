@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=6" />
 </head>
 <body>
 
@@ -36,17 +36,39 @@
     <!-- ============ HOME ============ -->
     <section id="home" class="home">
       <div class="home-inner">
-        <div class="me-wrap">
-          <div class="me-pad"><img class="me" src="assets/me.jpg" alt="Alicia Ma" /></div>
+        <div class="me-col">
+          <img class="me" src="assets/me.jpg" alt="Alicia Ma" />
+          <div class="socials">
+            <a href="mailto:alicia.m@berkeley.edu" aria-label="Email Alicia" title="alicia.m@berkeley.edu">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/a1iciama/" target="_blank" rel="noopener" aria-label="Alicia on LinkedIn" title="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="8.2" cy="8" r="1.25" fill="currentColor"/><path d="M8.2 11v5.5M11.8 16.5V11m0 2.6c0-1.5 1-2.6 2.4-2.6s2.2 1 2.2 2.6v2.9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </a>
+          </div>
         </div>
-        <div class="card intro">
-          <h1>Hi!</h1>
-          <p>
-            I'm Alicia Ma, a junior at UC Berkeley studying CS + IEOR (Industrial Engineering &amp; Operations Research).
-            I love creating things, whether it's with code or a pencil, and I'm happiest finding creative solutions to
-            tricky problems. Scroll to see my <a href="#experience">experience</a>, <a href="#projects">projects</a>,
-            and more <a href="#about">about me</a>!
-          </p>
+        <div class="intro lilypad">
+          <svg class="pad-shape" viewBox="0 0 200 200" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <radialGradient id="padFill" cx="45%" cy="45%" r="60%">
+                <stop offset="0%" stop-color="#e6f3d3"/>
+                <stop offset="60%" stop-color="#c3e2ac"/>
+                <stop offset="100%" stop-color="#9ccc93"/>
+              </radialGradient>
+            </defs>
+            <path class="pad-body" d="M135.0,44.0 L159.1,24.4 A96,96 0 1 1 142.1,13.7 Z" />
+            <g class="pad-veins"><path d="M100,100 L181.3,65.5" /><path d="M100,100 L181.9,133.1" /><path d="M100,100 L134.5,181.3" /><path d="M100,100 L66.9,181.9" /><path d="M100,100 L18.7,134.5" /><path d="M100,100 L18.1,66.9" /><path d="M100,100 L65.5,18.7" /></g>
+          </svg>
+          <div class="pad-text">
+            <h1>Hi, I'm Alicia!</h1>
+            <p>
+              I'm a junior at UC Berkeley studying CS + IEOR (Industrial Engineering &amp; Operations Research). I love
+              creating things, whether it's with code or a pencil (I drew this background on my iPad!), and I interned
+              at Capital One last summer. I'm drawn to problems involving systems and data, and I'm interested in
+              building reliable software at scale, including backend infra, ML, and fintech. Scroll to see my
+              <a href="#experience">experience</a>, <a href="#projects">projects</a>, and more <a href="#about">about me</a>!
+            </p>
+          </div>
         </div>
       </div>
       <a href="#experience" class="scroll-hint" aria-label="Scroll to experience">scroll <span>↓</span></a>
@@ -102,29 +124,43 @@
       <div class="grid projects">
 
         <article class="card project">
-          <div class="thumb placeholder"><span>image coming soon</span></div>
+          <div class="thumb art-thumb avomix" aria-hidden="true">
+            <svg viewBox="0 0 160 100"><circle cx="48" cy="50" r="26"/><circle cx="48" cy="50" r="6"/><circle cx="112" cy="50" r="26"/><circle cx="112" cy="50" r="6"/><path d="M48 24v10M112 24v10M70 82h20M66 88h28"/></svg>
+          </div>
           <div class="project-body">
-            <h3>Project one</h3>
-            <p>A short description of what this project does and why it's cool goes here.</p>
-            <ul class="tags"><li>Tag</li><li>Tag</li></ul>
+            <h3>AvoMix</h3>
+            <p>A hands-free DJ controller you play with your webcam. Hand tracking lets you scrub two decks by turning virtual wheels, toggle each song's vocals, drums and bass, and ride the volume, all in real time.</p>
+            <ul class="tags"><li>Python</li><li>OpenCV</li><li>MediaPipe</li><li>NumPy</li></ul>
+            <div class="project-links">
+              <a href="https://drive.google.com/file/d/1GKGvYoXqi4YARDmjsngRd3BRX7D-iUtq/view?usp=sharing" target="_blank" rel="noopener">demo video ↗</a>
+              <a href="https://github.com/a1icia-m/avomix" target="_blank" rel="noopener">github ↗</a>
+            </div>
           </div>
         </article>
 
         <article class="card project">
-          <div class="thumb placeholder"><span>image coming soon</span></div>
+          <div class="thumb art-thumb recipe" aria-hidden="true">
+            <svg viewBox="0 0 160 100"><path d="M40 50h80a40 40 0 0 1-80 0z"/><path d="M58 40c4-6-4-10 0-16M80 40c4-6-4-10 0-16M102 40c4-6-4-10 0-16"/></svg>
+          </div>
           <div class="project-body">
-            <h3>Project two</h3>
-            <p>A short description of what this project does and why it's cool goes here.</p>
-            <ul class="tags"><li>Tag</li><li>Tag</li></ul>
+            <h3>Recipe Recommender</h3>
+            <p>An AI-powered recipe search over 520,000+ recipes that I built to use up leftovers in my fridge while still hitting my gym macros. It understands plain-English requests with semantic search and a dietary classifier I trained myself.</p>
+            <ul class="tags"><li>Python</li><li>FastAPI</li><li>Streamlit</li><li>FAISS</li><li>scikit-learn</li></ul>
+            <div class="project-links">
+              <a href="https://github.com/a1icia-m/recipe_recommender" target="_blank" rel="noopener">github ↗</a>
+            </div>
           </div>
         </article>
 
         <article class="card project">
-          <div class="thumb placeholder"><span>image coming soon</span></div>
+<img class="thumb shot" src="assets/projects/droid-match.webp" alt="Screenshot of the Star Wars Droid Match game mid-play, with matched droid cards and a turn counter" loading="lazy" />
           <div class="project-body">
-            <h3>Project three</h3>
-            <p>A short description of what this project does and why it's cool goes here.</p>
-            <ul class="tags"><li>Tag</li><li>Tag</li></ul>
+            <h3>Star Wars Droid Match</h3>
+            <p>A memory matching game where you flip cards to pair up droids in as few turns as possible. I'm a huge Star Wars fan, so I built it to learn React and how to make a simple web app.</p>
+            <ul class="tags"><li>React</li><li>JavaScript</li><li>CSS</li></ul>
+            <div class="project-links">
+              <a href="https://github.com/a1icia-m/starwars-droid-match" target="_blank" rel="noopener">github ↗</a>
+            </div>
           </div>
         </article>
 
@@ -263,6 +299,6 @@
     </figure>
   </div>
 
-  <script src="main.js?v=4"></script>
+  <script src="main.js?v=6"></script>
 </body>
 </html>
