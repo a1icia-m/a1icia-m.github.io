@@ -257,8 +257,7 @@
   const box = document.getElementById('lightbox');
   const img = document.getElementById('lb-img');
   const title = document.getElementById('lb-title');
-  const medium = document.getElementById('lb-medium');
-  const size = document.getElementById('lb-size');
+  const meta = document.getElementById('lb-meta');
   const closeBtn = document.getElementById('lb-close');
   let opener = null;
 
@@ -267,8 +266,7 @@
     img.src = pic.src;
     img.alt = pic.alt;
     title.textContent = fig.dataset.title || '';
-    medium.textContent = fig.dataset.medium || '';
-    size.textContent = fig.dataset.size || '';
+    meta.textContent = [fig.dataset.medium, fig.dataset.size].filter(Boolean).join(' · ');
     opener = fig;
     box.hidden = false;
     document.body.style.overflow = 'hidden';
