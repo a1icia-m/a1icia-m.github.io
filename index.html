@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alicia Ma ⋆˙⟡</title>
+  <meta name="description" content="Alicia Ma — CS + IEOR at UC Berkeley. Experience, projects, artwork, and more." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦆</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ POND BACKGROUND (fixed, stays while you scroll) ============ -->
+  <div class="pond" aria-hidden="true">
+    <canvas id="water"></canvas>
+    <img class="pond-layer" src="assets/lilypads.webp" alt="" />
+    <img class="pond-layer ducks" id="ducks" src="assets/ducks.webp" alt="" />
+  </div>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="nav">
+    <a href="#home" class="brand">alicia ma <span>⋆˙⟡</span></a>
+    <nav>
+      <a href="#home" data-section="home">home</a>
+      <a href="#experience" data-section="experience">experience</a>
+      <a href="#projects" data-section="projects">projects</a>
+      <a href="#about" data-section="about">about</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ HOME ============ -->
+    <section id="home" class="home">
+      <div class="home-inner">
+        <img class="me" src="assets/me.jpg" alt="Alicia Ma" />
+        <div class="card intro">
+          <h1>Hi!</h1>
+          <p>
+            My name is Alicia Ma and I'm a junior studying cs + ieor (industrial engineering &amp; operations research)
+            at uc Berkeley. scroll to learn more about my
+            <a href="#experience">experiences</a>, <a href="#projects">projects</a>, and more
+            <a href="#about">about me</a> and my interests!
+          </p>
+        </div>
+      </div>
+      <a href="#experience" class="scroll-hint" aria-label="Scroll to experience">scroll <span>↓</span></a>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" class="section">
+      <h2 class="section-title">experience<span>.</span></h2>
+      <div class="card exp-list">
+
+        <article class="exp">
+          <div class="exp-head">
+            <h3>Software Engineer Intern <span class="at">@</span> <a href="https://www.capitalone.com" target="_blank" rel="noopener">Capital One</a></h3>
+            <span class="date">Summer 2026</span>
+          </div>
+          <p>On the Cloud Operations Resilience Engineering (CORE) team, built multi-region active-active failover for an AWS platform and fixed a cross-region bootstrap deadlock, cutting recovery time by 92%.</p>
+          <ul class="tags"><li>AWS</li><li>Aurora RDS</li><li>Transit Gateway</li><li>Distributed Systems</li></ul>
+        </article>
+
+        <article class="exp">
+          <div class="exp-head">
+            <h3>Software Engineer (Contract) <span class="at">@</span> <a href="https://www.nvidia.com" target="_blank" rel="noopener">NVIDIA</a></h3>
+            <span class="date">Sept – Dec 2025</span>
+          </div>
+          <p>Built an investment research dashboard for tracking AI-native startups.</p>
+          <ul class="tags"><li>React</li><li>TypeScript</li><li>Supabase</li></ul>
+        </article>
+
+        <article class="exp">
+          <div class="exp-head">
+            <h3>Machine Learning Engineer <span class="at">@</span> <a href="https://lightning.ai" target="_blank" rel="noopener">Lightning AI</a></h3>
+            <span class="date">dates TBD</span>
+          </div>
+          <p>Built a RAG chatbot that finds relevant JIRA tickets from natural-language questions, plus the evaluation pipeline that scores its answers.</p>
+          <ul class="tags"><li>Python</li><li>RAG</li><li>Vector Search</li><li>DeepEval</li></ul>
+        </article>
+
+        <article class="exp">
+          <div class="exp-head">
+            <h3>Software Engineer Intern <span class="at">@</span> <a href="https://www.t-mobile.com" target="_blank" rel="noopener">T-Mobile</a></h3>
+            <span class="date">dates TBD</span>
+          </div>
+          <p>Built an internal AI search system over thousands of data tables, used by thousands of employees, with REST endpoints and automated data refreshes.</p>
+          <ul class="tags"><li>Python</li><li>LangChain</li><li>Azure OpenAI</li><li>Databricks</li></ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section">
+      <h2 class="section-title">projects<span>.</span></h2>
+      <div class="grid projects">
+
+        <article class="card project">
+          <div class="thumb placeholder"><span>image coming soon</span></div>
+          <div class="project-body">
+            <h3>Project one</h3>
+            <p>A short description of what this project does and why it's cool goes here.</p>
+            <ul class="tags"><li>Tag</li><li>Tag</li></ul>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div class="thumb placeholder"><span>image coming soon</span></div>
+          <div class="project-body">
+            <h3>Project two</h3>
+            <p>A short description of what this project does and why it's cool goes here.</p>
+            <ul class="tags"><li>Tag</li><li>Tag</li></ul>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div class="thumb placeholder"><span>image coming soon</span></div>
+          <div class="project-body">
+            <h3>Project three</h3>
+            <p>A short description of what this project does and why it's cool goes here.</p>
+            <ul class="tags"><li>Tag</li><li>Tag</li></ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section">
+      <h2 class="section-title">about me<span>.</span></h2>
+
+      <div class="card about-intro">
+        <p>
+          I'm a junior at UC Berkeley double majoring in computer science and industrial engineering &amp; operations research.
+          I grew up in Orange County, and these days I spend most of my time building things at the intersection of
+          distributed systems, search, and machine learning, from multi-region failover on AWS to RAG systems that help
+          people find what they're looking for.
+        </p>
+        <p>
+          Outside of coding, I'm usually drawing or painting (the pond you're looking at is hand-painted!), listening to
+          music, cafe hopping with friends, or out on a hike. I love anything creative, and I'm always looking for a new
+          cozy spot to sketch in.
+        </p>
+      </div>
+
+      <div class="grid two">
+        <div class="card">
+          <h3 class="sub">things i love</h3>
+          <ul class="hobbies">
+            <li><span class="dot">✎</span>drawing</li>
+            <li><span class="dot">❀</span>painting</li>
+            <li><span class="dot">♫</span>listening to music</li>
+            <li><span class="dot">☕︎</span>cafe hopping</li>
+            <li><span class="dot">⛰</span>hiking</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="sub">fun facts</h3>
+          <ul class="facts">
+            <li>placed 1st in California and 3rd nationally in FBLA Financial Mathematics</li>
+            <li>founded a STEM nonprofit that grew to multiple chapters and hundreds of members</li>
+            <li>designed stickers for my own Etsy shop</li>
+            <li>heading to Singapore to study abroad at NUS in fall 2027</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ---------- ARTWORK ---------- -->
+      <h3 class="section-sub">artwork</h3>
+      <p class="section-note">click any piece to take a closer look</p>
+
+      <h4 class="art-cat">digital</h4>
+      <div class="grid art">
+        <!-- To add a piece: copy one <figure> block, change the src and the data-* fields. -->
+        <figure class="art-piece" tabindex="0"
+          data-title="ducks in the woods"
+          data-medium="digital painting"
+          data-size="2160 × 1620 px">
+          <img src="assets/art/ducks-in-the-woods.webp" alt="Digital painting of a glowing cottage in the woods with two ducks on the path" loading="lazy" />
+          <figcaption>ducks in the woods</figcaption>
+        </figure>
+        <div class="art-piece placeholder"><span>more coming soon</span></div>
+        <div class="art-piece placeholder"><span>more coming soon</span></div>
+      </div>
+
+      <h4 class="art-cat">traditional</h4>
+      <div class="grid art">
+        <div class="art-piece placeholder"><span>coming soon</span></div>
+        <div class="art-piece placeholder"><span>coming soon</span></div>
+        <div class="art-piece placeholder"><span>coming soon</span></div>
+      </div>
+
+      <!-- ---------- RECENT EATS ---------- -->
+      <h3 class="section-sub">recent fav eats</h3>
+      <div class="grid eats">
+        <article class="card eat">
+          <div class="thumb placeholder"><span>photo coming soon</span></div>
+          <h4>Place name</h4>
+          <p>What I ordered and why I loved it.</p>
+        </article>
+        <article class="card eat">
+          <div class="thumb placeholder"><span>photo coming soon</span></div>
+          <h4>Place name</h4>
+          <p>What I ordered and why I loved it.</p>
+        </article>
+        <article class="card eat">
+          <div class="thumb placeholder"><span>photo coming soon</span></div>
+          <h4>Place name</h4>
+          <p>What I ordered and why I loved it.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>made with love (and ducks) by alicia ma ⋆˙⟡ 2026</p>
+    </footer>
+  </main>
+
+  <!-- ============ ARTWORK LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Artwork viewer" hidden>
+    <button class="lb-close" id="lb-close" aria-label="Close">×</button>
+    <figure class="lb-frame">
+      <img id="lb-img" src="" alt="" />
+      <figcaption class="lb-info">
+        <h3 id="lb-title"></h3>
+        <p><span id="lb-medium"></span> · <span id="lb-size"></span></p>
+      </figcaption>
+    </figure>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
