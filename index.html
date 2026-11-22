@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alicia Ma ⋆˙⟡</title>
   <meta name="description" content="Alicia Ma — CS + IEOR at UC Berkeley. Experience, projects, artwork, and more." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦆</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦢</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=6" />
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
 
@@ -47,19 +47,7 @@
             </a>
           </div>
         </div>
-        <div class="intro lilypad">
-          <svg class="pad-shape" viewBox="0 0 200 200" preserveAspectRatio="none" aria-hidden="true">
-            <defs>
-              <radialGradient id="padFill" cx="45%" cy="45%" r="60%">
-                <stop offset="0%" stop-color="#e6f3d3"/>
-                <stop offset="60%" stop-color="#c3e2ac"/>
-                <stop offset="100%" stop-color="#9ccc93"/>
-              </radialGradient>
-            </defs>
-            <path class="pad-body" d="M135.0,44.0 L159.1,24.4 A96,96 0 1 1 142.1,13.7 Z" />
-            <g class="pad-veins"><path d="M100,100 L181.3,65.5" /><path d="M100,100 L181.9,133.1" /><path d="M100,100 L134.5,181.3" /><path d="M100,100 L66.9,181.9" /><path d="M100,100 L18.7,134.5" /><path d="M100,100 L18.1,66.9" /><path d="M100,100 L65.5,18.7" /></g>
-          </svg>
-          <div class="pad-text">
+        <div class="card intro">
             <h1>Hi, I'm Alicia!</h1>
             <p>
               I'm a junior at UC Berkeley studying CS + IEOR (Industrial Engineering &amp; Operations Research). I love
@@ -68,7 +56,6 @@
               building reliable software at scale, including backend infra, ML, and fintech. Scroll to see my
               <a href="#experience">experience</a>, <a href="#projects">projects</a>, and more <a href="#about">about me</a>!
             </p>
-          </div>
         </div>
       </div>
       <a href="#experience" class="scroll-hint" aria-label="Scroll to experience">scroll <span>↓</span></a>
@@ -82,9 +69,9 @@
         <article class="exp">
           <div class="exp-head">
             <h3>Software Engineer Intern <span class="at">@</span> <a href="https://www.capitalone.com" target="_blank" rel="noopener">Capital One</a></h3>
-            <span class="date">Summer 2026</span>
+            <span class="date">June – Aug 2026</span>
           </div>
-          <p>On the Cloud Operations Resilience Engineering (CORE) team, built multi-region active-active failover for an AWS platform and fixed a cross-region bootstrap deadlock, cutting recovery time by 92%.</p>
+          <p>On the Cloud Operations Resilience Engineering (CORE) team, automated cross-region failover for production Aurora databases with a 3-minute recovery time, and fixed a lock-contention deadlock, cutting timeouts 92%.</p>
           <ul class="tags"><li>AWS</li><li>Aurora RDS</li><li>Transit Gateway</li><li>Distributed Systems</li></ul>
         </article>
 
@@ -99,20 +86,20 @@
 
         <article class="exp">
           <div class="exp-head">
-            <h3>Machine Learning Engineer <span class="at">@</span> <a href="https://lightning.ai" target="_blank" rel="noopener">Lightning AI</a></h3>
-            <span class="date">dates TBD</span>
+            <h3>Software Engineer Intern <span class="at">@</span> <a href="https://www.t-mobile.com" target="_blank" rel="noopener">T-Mobile</a></h3>
+            <span class="date">Feb – July 2025</span>
           </div>
-          <p>Built a RAG chatbot that finds relevant JIRA tickets from natural-language questions, plus the evaluation pipeline that scores its answers.</p>
-          <ul class="tags"><li>Python</li><li>RAG</li><li>Vector Search</li><li>DeepEval</li></ul>
+          <p>Built an internal AI search system over thousands of data tables, used by thousands of employees, with REST endpoints and automated data refreshes.</p>
+          <ul class="tags"><li>Python</li><li>LangChain</li><li>Azure OpenAI</li><li>Databricks</li></ul>
         </article>
 
         <article class="exp">
           <div class="exp-head">
-            <h3>Software Engineer Intern <span class="at">@</span> <a href="https://www.t-mobile.com" target="_blank" rel="noopener">T-Mobile</a></h3>
-            <span class="date">dates TBD</span>
+            <h3>Machine Learning Engineer <span class="at">@</span> <a href="https://lightning.ai" target="_blank" rel="noopener">Lightning AI</a></h3>
+            <span class="date">Aug 2024 – Jan 2025</span>
           </div>
-          <p>Built an internal AI search system over thousands of data tables, used by thousands of employees, with REST endpoints and automated data refreshes.</p>
-          <ul class="tags"><li>Python</li><li>LangChain</li><li>Azure OpenAI</li><li>Databricks</li></ul>
+          <p>Built a RAG chatbot that finds relevant JIRA tickets from natural-language questions, plus the evaluation pipeline that scores its answers.</p>
+          <ul class="tags"><li>Python</li><li>RAG</li><li>Vector Search</li><li>DeepEval</li></ul>
         </article>
 
       </div>
@@ -209,51 +196,69 @@
       <h4 class="art-cat">digital</h4>
       <div class="grid art">
         <!-- To add a piece: copy one <figure> block, change the src and the data-* fields. -->
-        <figure class="art-piece" tabindex="0"
+        <figure class="card art-piece" tabindex="0"
           data-title="ducks in the woods"
-          data-medium="digital painting"
-          data-size="2160 × 1620 px">
-          <img src="assets/art/ducks-in-the-woods.webp" alt="Digital painting of a glowing cottage in the woods with two ducks on the path" loading="lazy" />
-          <figcaption>ducks in the woods</figcaption>
+          data-medium="digital"
+          data-size="">
+          <img class="thumb" src="assets/art/ducks-in-the-woods.webp" alt="Digital painting of a glowing cottage in the woods with two ducks on the path" loading="lazy" />
+          <figcaption>
+            <h4>ducks in the woods</h4>
+            <p>digital</p>
+          </figcaption>
         </figure>
-        <figure class="art-piece" tabindex="0"
+        <figure class="card art-piece" tabindex="0"
           data-title="bear pond"
           data-medium="digital"
           data-size="">
-          <img src="assets/art/bear-pond.webp" alt="Digital painting of a sleepy orange bear floating among lily pads and water lilies" loading="lazy" />
-          <figcaption>bear pond</figcaption>
+          <img class="thumb" src="assets/art/bear-pond.webp" alt="Digital painting of a sleepy orange bear floating among lily pads and water lilies" loading="lazy" />
+          <figcaption>
+            <h4>bear pond</h4>
+            <p>digital</p>
+          </figcaption>
         </figure>
-        <figure class="art-piece" tabindex="0"
+        <figure class="card art-piece" tabindex="0"
           data-title="jellyfish"
           data-medium="digital"
           data-size="">
-          <img src="assets/art/jellyfish.webp" style="object-position: center 15%;" alt="Digital painting of a glowing pastel jellyfish with sparkles against a dark sky" loading="lazy" />
-          <figcaption>jellyfish</figcaption>
+          <img class="thumb" src="assets/art/jellyfish.webp" style="object-position: center 15%;" alt="Digital painting of a glowing pastel jellyfish with sparkles against a dark sky" loading="lazy" />
+          <figcaption>
+            <h4>jellyfish</h4>
+            <p>digital</p>
+          </figcaption>
         </figure>
       </div>
 
       <h4 class="art-cat">traditional</h4>
       <div class="grid art">
-        <figure class="art-piece" tabindex="0"
+        <figure class="card art-piece" tabindex="0"
           data-title="queen of hearts"
           data-medium="mixed media"
           data-size="9 × 12 in">
-          <img src="assets/art/queen-of-hearts.webp" style="object-position: center 30%;" alt="Mixed media portrait of a girl wearing a crown folded from heart playing cards, over a collage of book pages" loading="lazy" />
-          <figcaption>queen of hearts</figcaption>
+          <img class="thumb" src="assets/art/queen-of-hearts.webp" style="object-position: center 30%;" alt="Mixed media portrait of a girl wearing a crown folded from heart playing cards, over a collage of book pages" loading="lazy" />
+          <figcaption>
+            <h4>queen of hearts</h4>
+            <p>mixed media · 9 × 12 in</p>
+          </figcaption>
         </figure>
-        <figure class="art-piece" tabindex="0"
+        <figure class="card art-piece" tabindex="0"
           data-title="dissonance"
           data-medium="color pencil"
           data-size="9 × 12 in">
-          <img src="assets/art/dissonance.webp" alt="Color pencil drawing of a girl resting her head on a reflective surface, her reflection distorted below" loading="lazy" />
-          <figcaption>dissonance</figcaption>
+          <img class="thumb" src="assets/art/dissonance.webp" alt="Color pencil drawing of a girl resting her head on a reflective surface, her reflection distorted below" loading="lazy" />
+          <figcaption>
+            <h4>dissonance</h4>
+            <p>color pencil · 9 × 12 in</p>
+          </figcaption>
         </figure>
-        <figure class="art-piece" tabindex="0"
+        <figure class="card art-piece" tabindex="0"
           data-title="blissful ignorance"
           data-medium="color pencil"
           data-size="9 × 12 in">
-          <img src="assets/art/blissful-ignorance.webp" alt="Color pencil drawing of a blindfolded girl surrounded by butterflies in blue and pink light" loading="lazy" />
-          <figcaption>blissful ignorance</figcaption>
+          <img class="thumb" src="assets/art/blissful-ignorance.webp" alt="Color pencil drawing of a blindfolded girl surrounded by butterflies in blue and pink light" loading="lazy" />
+          <figcaption>
+            <h4>blissful ignorance</h4>
+            <p>color pencil · 9 × 12 in</p>
+          </figcaption>
         </figure>
       </div>
 
@@ -299,6 +304,6 @@
     </figure>
   </div>
 
-  <script src="main.js?v=6"></script>
+  <script src="main.js?v=7"></script>
 </body>
 </html>

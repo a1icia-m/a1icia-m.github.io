@@ -193,27 +193,13 @@ main { position: relative; z-index: 2; }
 .socials a:hover { transform: translateY(-2px); background: var(--moss); color: var(--cream-solid); }
 .socials svg { width: 22px; height: 22px; }
 
-/* intro text sits on a painted-style lily pad */
-.intro.lilypad {
-  position: relative;
+/* intro card in lily pad green */
+.card.intro {
   flex: 1;
-  max-width: 660px;
-  padding: 12% 13% 11%;
-  filter: drop-shadow(0 12px 24px rgba(16, 48, 38, 0.3));
-  animation: pad-float 7s ease-in-out infinite;
+  background: linear-gradient(145deg, rgba(230, 243, 211, 0.92), rgba(186, 222, 166, 0.9));
+  border: 2px solid rgba(106, 168, 127, 0.55);
 }
-@keyframes pad-float {
-  0%, 100% { transform: rotate(-0.6deg) translateY(0); }
-  50% { transform: rotate(0.6deg) translateY(5px); }
-}
-.pad-shape { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.pad-body { fill: url(#padFill); stroke: #6aa87f; stroke-width: 2.5; vector-effect: non-scaling-stroke; }
-.pad-veins path { stroke: rgba(255, 255, 255, 0.28); stroke-width: 1.5; fill: none; vector-effect: non-scaling-stroke; }
-.pad-text { position: relative; }
-.intro.lilypad h1 { font-size: clamp(36px, 4vw, 48px); }
-.intro.lilypad p { font-size: 16.5px; line-height: 1.6; }
-.intro.lilypad a { text-decoration-color: var(--moss); }
-
+.card.intro a { text-decoration-color: var(--moss); }
 .intro h1 {
   font-family: var(--serif);
   font-weight: 500;
@@ -300,28 +286,12 @@ main { position: relative; z-index: 2; }
   font-size: 15px;
   letter-spacing: 0.04em;
 }
-.grid.art { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-bottom: 14px; }
-.art-piece {
-  margin: 0;
-  position: relative;
-  aspect-ratio: 4 / 3;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-}
-.art-piece.placeholder { background-color: var(--cream); }
-figure.art-piece { cursor: zoom-in; background: var(--cream-solid); }
-figure.art-piece img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
-figure.art-piece figcaption {
-  position: absolute; left: 0; right: 0; bottom: 0;
-  padding: 26px 14px 10px;
-  color: #fff; font-family: var(--serif); font-size: 17px;
-  background: linear-gradient(transparent, rgba(10, 30, 24, 0.6));
-  opacity: 0; transform: translateY(8px);
-  transition: opacity .3s, transform .3s;
-}
-figure.art-piece:hover img, figure.art-piece:focus-visible img { transform: scale(1.05); }
-figure.art-piece:hover figcaption, figure.art-piece:focus-visible figcaption { opacity: 1; transform: none; }
+.grid.art { grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); margin-bottom: 14px; }
+figure.art-piece { margin: 0; padding: 14px 14px 20px; cursor: zoom-in; transition: transform .25s; }
+figure.art-piece:hover { transform: translateY(-4px); }
+figure.art-piece .thumb { aspect-ratio: 1 / 1; width: 100%; object-fit: cover; border-radius: 14px; margin-bottom: 14px; }
+figure.art-piece h4 { margin: 0 6px 4px; font-family: var(--serif); font-weight: 500; font-size: 20px; }
+figure.art-piece p { margin: 0 6px; color: var(--ink-soft); font-size: 15px; }
 figure.art-piece:focus-visible { outline: 3px solid var(--beak); outline-offset: 3px; }
 
 /* ---------- lightbox ---------- */
@@ -390,8 +360,6 @@ figure.art-piece:focus-visible { outline: 3px solid var(--beak); outline-offset:
   .home-inner { padding-right: 0; flex-direction: column; text-align: center; }
   .home { align-items: flex-end; padding-bottom: 90px; }
   .me { width: 170px; height: 170px; }
-  .intro.lilypad { padding: 30% 12% 26%; width: 100%; }
-  .intro.lilypad p { font-size: 15.5px; }
 }
 @media (max-width: 640px) {
   body { font-size: 16px; }
@@ -410,5 +378,5 @@ figure.art-piece:focus-visible { outline: 3px solid var(--beak); outline-offset:
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .ducks, .scroll-hint span, .intro.lilypad { animation: none; }
+  .ducks, .scroll-hint span { animation: none; }
 }
