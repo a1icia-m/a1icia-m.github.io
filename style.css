@@ -275,6 +275,17 @@ main { position: relative; z-index: 2; }
 .project p { margin: 0; color: var(--ink-soft); font-size: 16px; }
 
 /* ---------- about ---------- */
+.about-intro { display: flex; gap: 32px; align-items: center; }
+.about-photo {
+  flex-shrink: 0;
+  width: 260px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 6px solid var(--leaf);
+  box-shadow: var(--shadow);
+}
+.about-text { flex: 1; min-width: 0; }
 .about-intro p { margin: 0 0 14px; font-size: 18px; }
 .about-intro p:last-child { margin-bottom: 0; }
 .sub { font-family: var(--serif); font-weight: 500; font-size: 24px; margin: 0 0 14px; }
@@ -369,6 +380,8 @@ figure.art-piece:focus-visible { outline: 3px solid var(--beak); outline-offset:
 
 /* ---------- responsive ---------- */
 @media (max-width: 900px) {
+  .about-intro { flex-direction: column; }
+  .about-photo { width: min(280px, 100%); }
   .intro::before { inset: -24px -16px; background: radial-gradient(ellipse at center, rgba(14, 46, 36, 0.55) 0%, rgba(14, 46, 36, 0.38) 55%, rgba(14, 46, 36, 0) 85%); }
   .home-inner { padding-right: 0; flex-direction: column; text-align: center; }
   .home { align-items: flex-end; padding-bottom: 90px; }
